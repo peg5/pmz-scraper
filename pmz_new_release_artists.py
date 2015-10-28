@@ -1,4 +1,4 @@
-#! python3
+#! /usr.bin/python3
 
 #    pmz_new_release_artists.py
 #    Copyright (C) 2015  Patrick Graham
@@ -23,6 +23,7 @@ import csv
 URL = 'http://www.progmetalzone.com/category/new-releases/'
 new_release_links = []
 artist = []
+bands = open('bands.csv', "a", newline="")
 
 response = requests.get(URL)
 response.raise_for_status()
@@ -37,7 +38,6 @@ for i in range(len(new_release_links)):
     for j in range(len(artist)):
         artist_name = []
         artist_name.append(artist[j].get_text())
-        bands = open('bands.csv', "a", newline="")
         bandsWriter = csv.writer(bands)
         bandsWriter.writerow(artist_name)
         del artist_name
