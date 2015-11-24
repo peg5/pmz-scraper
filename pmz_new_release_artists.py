@@ -1,4 +1,4 @@
-#! /usr.bin/python3
+#! /usr/bin/python3
 
 #    pmz_new_release_artists.py
 #    Copyright (C) 2015  Patrick Graham
